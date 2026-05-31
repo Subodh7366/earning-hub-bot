@@ -194,8 +194,9 @@ bot.on("message", async (msg) => {
   }
 
   if (text === "👥 Invite") {
-   const botInfo = await bot.getMe();
-const link = `https://t.me/${botInfo.username}?start=ref_${userId}`;
+ const botInfo = await bot.getMe();
+    const link = `https://t.me/${botInfo.username}?start=ref_${userId}`;
+    await bot.sendMessage(userId,
       `👥 *Invite Karo, Spin Kamao!*\n\n🎁 Har referral = 1 extra spin!\n\n🔗 *Tumhara Link:*\n${link}\n\n👥 Total Referrals: ${user.referrals}`,
       { parse_mode: "Markdown", disable_web_page_preview: true }
     );
